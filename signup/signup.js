@@ -33,7 +33,7 @@ document.getElementById("signUpBtn").addEventListener("click", async (e) => {
     } else if (data.data.statusCode === 409) {
       return alert("This email id is already registered");
     } else {
-      location.href = "http://127.0.0.1:5500/index.html";
+      location.href = location.href = location.origin + "/index.html";
     }
   } catch (error) {
     console.log(error.message);

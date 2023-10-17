@@ -28,7 +28,7 @@ document.getElementById("signInBtn").addEventListener("click", async (e) => {
     } else if (data.data.statusCode === 401) {
       alert("Please enter correct credentials");
     } else {
-      location.href = "http://127.0.0.1:5500/index.html";
+      location.href = location.href = location.origin + "/index.html";
     }
   } catch (error) {
     console.log(error.message);
