@@ -4,10 +4,10 @@ document.getElementById("signUpBtn").addEventListener("click", async (e) => {
   let lastName = document.getElementById("lastName").value;
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
-  let name = firstName + lastName;
+  let name = email;
   try {
     const response = await fetch(
-      "http://localhost:8080/api/v1/users/register",
+      "https://demo-dev-cpbh.2.sg-1.fl0.io/api/v1/users/register",
       {
         method: "POST",
         mode: "cors",
@@ -31,7 +31,7 @@ document.getElementById("signUpBtn").addEventListener("click", async (e) => {
       }
       return;
     } else if (data.data.statusCode === 409) {
-      return alert("This email id is alredy registered")
+      return alert("This email id is already registered");
     } else {
       location.href = "http://127.0.0.1:5500/index.html";
     }
